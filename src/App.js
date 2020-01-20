@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import logo from './public/rootlogo.png'
+import Nav from './components/nav'
+import Main from './components/main'
+import Login from './components/login'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <input type="button" value="로그인"></input>
+        <a href="undefined"><img src={logo} alt="logo"></img></a>
+        <Nav></Nav>
+      </div>
+    );
+  }
 }
-
-export default App;
