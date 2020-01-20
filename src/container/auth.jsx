@@ -1,10 +1,10 @@
 import Login from '../components/login'
 import {connect} from 'react-redux'
 
-function mapStateToProps() {
+function mapStateToProps(state) {
     return{
-        userid = state.id;
-        userpw = state.pw;
+        userid:state.id,
+        userpw:state.pw
     }
 }
 function mapDispatchToProps() {
