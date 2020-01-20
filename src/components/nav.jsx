@@ -27,6 +27,8 @@ export default class Nav extends Component {
                 <Route path="/" component={Main}></Route>
                 <input type="button" value="+"onClick></input>
                 <input type="text" value="1"></input>
+                <input type="text" value="1"></input>
+                
             </Router>
         );
     }
