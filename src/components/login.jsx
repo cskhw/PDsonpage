@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
-
-export default class Login extends Component{
-    render(){
-        return(
-            <div className="Login">
-                <form action="./auth" method="get">
-                    <fieldset>
-                    <legend>로그인</legend>                    
-                    <label for="id">아이디
+import Auth from '../container/auth';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+export default class Login extends Component {
+    render() {
+        return (
+            <Router>
+                <div className="Login">
+                    <form action="./auth" method="get">
+                        <fieldset>
+                            <legend>로그인</legend>
+                            <label for="id">아이디
                         <input type="text" id="id" name="ID" placeholder="id"></input>
-                    </label><br></br>
-                    <label for="pw">비밀번호
+                            </label><br></br>
+                            <label for="pw">비밀번호
                         <input type="text" id="pw" name="PW" placeholder="password"></input>
-                    </label><br></br>
-                    <input type="submit" value="로그인"></input>
-                    </fieldset>
-                </form>
+                            </label><br></br>
+                            <input type="submit" value="로그인"></input>
+                        </fieldset>
+                    </form>
+                    <Route path="/auth" component={Auth}></Route>
 
-            </div>
+                </div>
+            </Router>
         );
     }
 }
