@@ -1,17 +1,19 @@
-import Login from '../components/login'
+import Auth from '../components/auth'
 import {connect} from 'react-redux'
 
 function mapStateToProps(state) {
+ 
     return{
-        userid:state.id,
-        userpw:state.pw
+        userid:state.data,
+        userpw:state.userpw
     }
 }
-function mapDispatchToProps() {
-    return function auth(){
-
+function mapDispatchToProps(dispatch){
+    
+    return {
         
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);

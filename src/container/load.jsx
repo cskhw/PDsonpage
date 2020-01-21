@@ -1,12 +1,17 @@
 import Load from '../components/load'
 import {connect} from 'react-redux'
-import axios from "axios"
 
+function mapStateToProps(state){
+    return {
+        size:state.size,
+        auth:state.auth
+    }
+}
 
 function mapDispatchToProps(dispatch){
     return {
-        Auth: function(){
-            dispatch({type:'Auth'});
+        increment: function(){
+            dispatch({type:'test'});
         }
     }
 }
