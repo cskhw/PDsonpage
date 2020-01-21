@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+const test = async () => {
+    const response = await axios.get('/login')
+    console.log(response.data)
+}
+
 export default class Main extends Component{
-    async getDataAxios(){
-        const response = await axios.get('https://localhost:3000/auth')
-        console.log(response.data)
-    }
+    
     render(){
-        this.getDataAxios()
+        test();
         return(
             <div className="secline">
             <span>id = {this.props.userid}</span><br></br>
