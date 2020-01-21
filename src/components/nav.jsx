@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from '../container/login';
-import Auth from '../container/auth';
 import Main from './main';
 import logo from '../public/rootlogo.png'
 export default class Nav extends Component {
@@ -21,7 +20,6 @@ export default class Nav extends Component {
                     <a href="load">오시는길</a>
                     <a href="login">로그인</a>
                 </nav>
-                <Route path="/auth" component={Auth}></Route>
                 <Route path="/login" component={Login}></Route>
                 <Route path="/" component={Main}></Route>
             </Router>
