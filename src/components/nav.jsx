@@ -25,7 +25,6 @@ export default class Nav extends Component {
                 <Route path="/login" component={Login}></Route>
                 <Route path="/" component={Main}></Route>
                 <Route path="/load" component={Load}></Route>
-                <Route path="/auth" component={Auth}></Route>
                
                 
             </Router>
