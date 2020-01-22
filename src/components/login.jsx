@@ -15,7 +15,7 @@ export default class Login extends Component {
     }
     
     handleChangepw(e){
-        this.setState({id:e.target.pw})
+        this.setState({pw:e.target.pw})
     }
     handleSubmit(e){
         alert('id, pw = ' + this.state.id + this.state.pw)
