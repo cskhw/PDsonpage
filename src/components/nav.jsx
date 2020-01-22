@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Login from '../components/login';
-import Auth from '../container/auth';
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import Login from '../container/login';
 import Load from '../container/load';
-import Main from './main';
 import logo from '../public/rootlogo.png'
 export default class Nav extends Component {
+    componentDidMount(){}
+    state={
+        status:'로그인'
+    }
     render() {
         return (
             <Router>
-                <form action="/login">
-                    <input type="button" name="status" value="로그인"></input>
+                <form>
+                <Link to="/login">{this.state.status}</Link>
                 </form>
                 <a href="/"><img src={logo} alt="logo"></img></a>
                 <nav>
@@ -20,14 +22,11 @@ export default class Nav extends Component {
                     <a href="/excutive">임원진</a>
                     <a href="/board">게시판</a>
                     <a href="/load">오시는길</a>
-                    <a href="/login">로그인</a>
                 </nav>
+                <Switch>
                 <Route path="/login" component={Login}></Route>
-                <Route path="/" component={Main}></Route>
                 <Route path="/load" component={Load}></Route>
-                <Route path="/auth" component={Auth}></Route>
-               
-                
+                </Switch>
             </Router>
         );
     }

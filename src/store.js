@@ -3,8 +3,8 @@ import { createStore } from 'redux';
 export default createStore(function (state, action) {
     if (state === undefined) {
         return {
-        userid: 'f',
-        userpw: 'f',
+        userid: 'test1234',
+        userpw: '1234',
         auth: 'false',
         size:0
     }

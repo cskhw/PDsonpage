@@ -1,15 +1,12 @@
-import Load from '../components/load'
+import Login from '../components/login'
 import {connect} from 'react-redux'
 import axios from "axios"
 
-
-function mapDispatchToProps(dispatch){
+function mapStateToProps(state) {
     return {
-        Auth: function(){
-            dispatch({type:'Auth'});
-        }
+        userid:state.userid,
+        userpw:state.userpw,
+        auth:state.auth
     }
 }
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Load);
+export default connect(mapStateToProps, null)(Login);
