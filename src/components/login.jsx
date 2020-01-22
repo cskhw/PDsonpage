@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { render } from '@testing-library/react';
-
+import React, { Component} from 'react';
+import { BrowserRouter as Router, Link,Route } from 'react-router-dom'
+import mysql from 'mysql'
 
 export default class Login extends Component {
   constructor(props) {
@@ -10,7 +9,8 @@ export default class Login extends Component {
       id: '',
       pw: '',
       auth: 'false',
-      ischecked: false
+      ischecked: 'false',
+      status:'/login'
     }
   }
   componentDidMount() {
@@ -34,31 +34,33 @@ export default class Login extends Component {
       if (this.state.ischecked) {
         localStorage.setItem('id', this.state.id)
         localStorage.setItem('pw', this.state.pw)
+        localStorage.setItem('auth', 'true')
       }
     }
     else {
       (alert(this.state.auth))
       this.setState({ auth: 'false' });
-      window.sessionStorage.setItem('auth', 'false');
+      sessionStorage.setItem('auth', 'false');
 
     }
   }
   ischeck = (e) => {
     this.setState({ ischecked: !this.state.ischecked })
-    
+  
   }
   render() {
 
     return (
-      <form action="/">
+      <form>
         <span>세션아이디: {sessionStorage.getItem('id')}</span><br></br>
         <span>세션비밀번호: {sessionStorage.getItem('id')}</span><br></br>
         <span>로컬아이디: {localStorage.getItem('id')}</span><br></br>
-        <span>로컨비밀번호: {localStorage.getItem('pw')}</span><br></br>
+        <span>로컬비밀번호: {localStorage.getItem('pw')}</span><br></br>
         <span>아이디:{this.props.userid}</span><br></br>
         <span>비밀번호:{this.props.userpw}</span><br></br>
-        <span>인증상태:{sessionStorage.getItem('auth')}</span><br></br>
-
+        <span>세션인증상태:{sessionStorage.getItem('auth')}</span><br></br>
+        <span>로컬인증상태:{localStorage.getItem('auth')}</span><br></br>
+        
         아이디<input
           placeholder="ID"
           value={this.state.id}
@@ -71,8 +73,7 @@ export default class Login extends Component {
           onChange={this.handleChange}
           name="pw"
         /><br></br>
-        <input type="button" value="로그인"
-          onClick={this.handleClick}></input>
+        <a href={this.state.status} onClick={this.handleClick}>로그인</a>
         <input type="checkbox" value={this.state.ischecked} onChange={this.ischeck}></input>자동로그인
             <br></br>
         <span>아이디:{this.state.id}</span><br></br>
