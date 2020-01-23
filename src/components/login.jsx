@@ -48,6 +48,17 @@ export default class Login extends Component {
     this.setState({ ischecked: !this.state.ischecked })
   
   }
+  keeper = (e) => {
+    if(this.state.go==='/'){
+        this.setState({go:'/login', status:'로그인'})
+        sessionStorage.removeItem('id')
+        sessionStorage.removeItem('pw')
+        sessionStorage.removeItem('auth')
+        localStorage.removeItem('id')
+        localStorage.removeItem('pw')
+        localStorage.removeItem('auth')
+    }
+}
   render() {
 
     return (
@@ -60,14 +71,17 @@ export default class Login extends Component {
         <span>비밀번호:{this.props.userpw}</span><br></br>
         <span>세션인증상태:{sessionStorage.getItem('auth')}</span><br></br>
         <span>로컬인증상태:{localStorage.getItem('auth')}</span><br></br>
-        
-        아이디<input
+        <fieldset style={{
+          width:'40em',
+          height:'40em'
+      }}>
+        <input
           placeholder="ID"
           value={this.state.id}
           onChange={this.handleChange}
           name="id"
         /><br></br>
-        비밀번호<input
+        <input
           placeholder="PW"
           value={this.state.pw}
           onChange={this.handleChange}
@@ -76,8 +90,10 @@ export default class Login extends Component {
         <a href={this.state.status} onClick={this.handleClick}>로그인</a>
         <input type="checkbox" value={this.state.ischecked} onChange={this.ischeck}></input>자동로그인
             <br></br>
+            </fieldset>
         <span>아이디:{this.state.id}</span><br></br>
         <span>비밀번호:{this.state.pw}</span><br></br>
+      
       </form>
     );
   }
