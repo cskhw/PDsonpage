@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Load from '../container/load';
-import logo from '../public/rootlogo.png'
 import Login from '../container/login';
 import Section from './section'
+import Notice from './notice'
 
 export default class Nav extends Component {
     constructor(props) {
@@ -30,22 +30,23 @@ export default class Nav extends Component {
         return (
             <Router>
                 <div className="loginButton">
-                    <Link to={this.state.go}
+                    <a href={this.state.go}
                         onClick={this.keeper}>{this.state.status}
-                    </Link>
+                    </a>
                 </div>
-                <Link to="/"><img src={logo} alt="logo"></img></Link>
+                <Link to="/"><img src={process.env.PUBLIC_URL+'rootlogo.png'} alt="logo"></img></Link>
                 <nav>
                     <Link to="/">홈으로</Link>
-                    <Link to="/note">공지사항</Link>
+                    <Link to="/notice">공지사항</Link>
                     <Link to="/intro">소개</Link>
                     <Link to="/board">게시판</Link>
                     <Link to="/load">오시는길</Link>
                 </nav>
                 <Switch>
-                    <Route path="/" component={Section}></Route>
-                    <Route path="/login" component={Login}></Route>
-                    <Route path="/load" component={Load}></Route>
+                    <Route exact path="/login" component={Login}></Route>
+                    <Route exact path="/" component={Section}></Route>
+                    <Route exact path="/notice" component={Notice}></Route>
+                    <Route exact path="/load" component={Load}></Route>
                 </Switch>
             </Router>
         );

@@ -46,7 +46,6 @@ export default class Login extends Component {
   }
   ischeck = (e) => {
     this.setState({ ischecked: !this.state.ischecked })
-  
   }
   keeper = (e) => {
     if(this.state.go==='/'){

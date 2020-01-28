@@ -11,17 +11,7 @@ body{
   margin:0 auto;
   padding:0;
 }
-
-nav{
-  display:inline-block;
-  position:relative;
-  left:10rem;
-  bottom:10rem;
-  margin-bottom:3em;
-  font-family:'Noto Sans KR';
-  font-weight:600;
-}
-section, article, footer{
+section, article, footer, aside{
   display:inline-block;
   font-family:'Noto Sans KR';
   font-weight:600;
@@ -29,16 +19,13 @@ section, article, footer{
 .App a img{
   display:block;
   position: relative;
+  bottom:2rem;
   right:22rem;
   width:18rem;
   height:auto;
   padding:3rem;
   margin:0 auto;
 }
-aside{
-  display:inline-block;
-}
-
 .loginButton a{
   position: relative;
   font-size:20px;
@@ -48,75 +35,100 @@ aside{
   font-weight:600;
   color:gray;
 }
-nav a{
-  margin: 0rem 0rem 0rem 1rem;
-  display:absolute;
-  width:5.0rem;
-  height:3rem;
-  text-align:center;
-  font-size:1.5rem;
-  font-family:'Nanum Gothic', sans-serif;
-  border-bottom: 4px solid #FFFFFF;
-}
-nav img{
-  padding-top:1rem;
-  padding-right:1rem;
-}
-nav a:link, aside .backcol a:link{
-   text-decoration:none;
-   color:black;
-}
-nav a:visited, aside .backcol a:visited{
+nav{
+    display:inline-block;
+    position:relative;
+    left:10rem;
+    bottom:11rem;
+    margin-bottom:3em;
+    font-family:'Noto Sans KR';
+    font-weight:600;
+  a{
+    margin: 0rem 3rem 0rem 0rem;
+    display:absolute;
+    width:5rem;
+    height:3rem;
+    text-align:center;
+    font-size:1.5rem;
+    font-family:'Nanum Gothic', sans-serif;
+    border-bottom: 4px solid #FFFFFF;
+  }
+  a:link, aside .backcol a:link{
+    text-decoration:none;
+    color:black;
+ }
+ a:visited, aside .backcol a:visited{
   text-decoration:none;
   color:black;
   
 }
-nav a:hover{
+a:hover{
   transition-property: border-bottom, color;
   color: #4b48ff;
-  transition-duration: 500ms;
+  transition-duration: 400ms;
   opacity:1;
   padding-bottom:1em;
   border-bottom: 4px solid #7777ff;
 }
-.navi{
-  padding-bottom:1em;
-  border-bottom: 4px solid #7777ff;    
-}
-.navi:link{
-  padding-bottom:1em;
-  border-bottom: 4px solid #7777ff;    
-}
-nav a:active{
+a:active{
   color:red;
   opacity:1.0;
 }
-nav a:focus{
+a:focus{
   padding-bottom:1em;
   position:relative;
   border-bottom: 4px solid #7777ff;
 }
-main section img{
-  position:relative;
-  top:3.5em;
-  left:1.5em;
-  width:22em;
-  height:auto;
-  box-shadow: 0px 0px 5px 1px #000000;
-  margin-top:10px;
-  margin-right:20px;
-}
-main section span {
-  position: relative;
-  top:3.4em;
-  right:10em;
-  text-shadow: 0px 0px 10px 1px #000000; 
-  font-size:1.2em;
-  font-weight:600;
-  display:inline-block;
-  margin-bottom:50px;
-  padding-bottom:2em;
-}
+} 
+
+
+section{
+  .banner img{
+    position:relative;
+    right:11rem;
+    bottom:9rem;
+    width:35rem;
+    height:auto;
+    transition:400ms ease all;
+    box-shadow:0px 0px 8px 2px black;
+  }
+  button{
+    background:rgb(199, 199, 199);
+    color:#fff;
+    border:none;
+    position:relative;
+    left:4rem;
+    bottom:11.7rem;
+    width:40px;
+    height:40px;
+    font-size:1.6em;
+    cursor:pointer;
+    transition:400ms ease all;
+    outline:none;
+    opacity:0.8
+  }
+  button:hover{
+    opacity:0.9;
+    box-shadow:0px 0px 3px 0.5px gray;
+  }
+  
+  button span{
+    font-style: 'Noto Sans KR';
+    font-size:2rem;
+    
+  }
+//   span :hover{
+//    background-color: gray;
+//    opacity:0.5;
+//    text-shadow: 1px 1px 1px 5px solid gray;
+//  }
+//   span {
+//    background-color: white;
+//    opacity:1;
+//    text-shadow: 1px 1px 1px 5px solid gray;
+//    cursor: pointer;
+//  }
+}  
 .bottom_line{
   display:inline-block;
   position:relative;
@@ -135,11 +147,7 @@ main section span {
   border: 0.5px solid #ececec;
   background-color: rgb(236, 243, 255);
 } */
-main aside .backcol a{
-  position:relative;
-  top:4em;
-  opacity:0.7;
-}
+
 .excutive_line{
   display: inline-block;
   position:relaive;
