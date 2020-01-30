@@ -1,4 +1,5 @@
 html, nav{
+  display:flex;
   margin:0;
   padding:0;
   text-align:center;
@@ -20,7 +21,7 @@ section, article, footer, aside{
   display:block;
   position: relative;
   bottom:2rem;
-  right:22rem;
+  left:1rem;
   width:18rem;
   height:auto;
   padding:3rem;
@@ -36,20 +37,20 @@ section, article, footer, aside{
   color:gray;
 }
 nav{
-    display:inline-block;
+    display:block;
     position:relative;
-    left:10rem;
-    bottom:11rem;
+    left:2rem;
+    bottom:4rem;
     margin-bottom:3em;
     font-family:'Noto Sans KR';
     font-weight:600;
   a{
-    margin: 0rem 3rem 0rem 0rem;
+    margin: 0rem 1.5rem 0rem 0rem;
     display:absolute;
     width:5rem;
     height:3rem;
     text-align:center;
-    font-size:1.5rem;
+    font-size:1.8rem;
     font-family:'Nanum Gothic', sans-serif;
     border-bottom: 4px solid #FFFFFF;
   }
@@ -81,12 +82,12 @@ a:focus{
 }
 } 
 
-
 section{
+    position:relative;
+    left:1rem;
+    bottom:4rem;
   .banner img{
     position:relative;
-    right:11rem;
-    bottom:9rem;
     width:35rem;
     height:auto;
     transition:400ms ease all;
@@ -97,8 +98,8 @@ section{
     color:#fff;
     border:none;
     position:relative;
-    left:4rem;
-    bottom:11.7rem;
+    left:15rem;
+    bottom:2.75rem;
     width:40px;
     height:40px;
     font-size:1.6em;
@@ -117,18 +118,55 @@ section{
     font-size:2rem;
     
   }
-//   span :hover{
-//    background-color: gray;
-//    opacity:0.5;
-//    text-shadow: 1px 1px 1px 5px solid gray;
-//  }
-//   span {
-//    background-color: white;
-//    opacity:1;
-//    text-shadow: 1px 1px 1px 5px solid gray;
-//    cursor: pointer;
-//  }
-}  
+}
+
+
+article{
+  position:relative;
+  text-align:left;
+  right:3rem;
+  bottom:3rem;
+  .notice{
+    position:relative;
+    width:30rem;  
+  }
+  .board{
+    position:relative;
+    display:inline-block;
+    top:3rem;
+    width:30rem;
+  }
+  span{
+    position: relative;
+    top:1rem;
+    left:4rem;
+    font-weight:900;
+    font-size:2rem;
+  }
+  .border-bottom{
+    position: relative;
+    left:4rem;
+    top:2rem;
+    width:3rem;
+    border-bottom:3px solid #4b48ff;
+  }
+  li{
+    height:2rem 2rem;
+    padding:1rem 1rem 1rem 1rem;
+    position:relative;
+    top:1em;
+    font-weight:600;
+    font-size:1.5rem;
+    list-style: none;
+    border-bottom:1px solid gray;
+    cursor: pointer;
+  }
+  li:hover{
+    background-color: rgba(231, 231, 231, 0.8);
+    transition: background-color 0.5s;
+    color:black;
+  }
+}
 .bottom_line{
   display:inline-block;
   position:relative;

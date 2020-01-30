@@ -29,11 +29,11 @@ export default class Nav extends Component {
     render() {
         return (
             <Router>
-                <div className="loginButton">
+                {/*<div className="loginButton">
                     <a href={this.state.go}
                         onClick={this.keeper}>{this.state.status}
                     </a>
-                </div>
+        </div>*/}
                 <Link to="/"><img src={process.env.PUBLIC_URL+'rootlogo.png'} alt="logo"></img></Link>
                 <nav>
                     <Link to="/">홈으로</Link>

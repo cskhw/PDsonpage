@@ -9,13 +9,7 @@ export default createStore(function (state, action) {
         size:0
     }
 }
-    if (action.type === 'Auth') {
-        var i = 0;
-        while(i<state.key.length){
-            if (state.key[i].id === state.userid  && state.key[i].pw === state.userpw)
-                return {...state, auth: 'true'}
-        }
-    }
+
  
     if (action.type === 'test'){
         return {...state, size:state.size + 1}
