@@ -30,7 +30,7 @@ export default class Section extends Component {
     }
     render() {
         return (
-            <Router>
+            <div>
                 <section>
                     <div className="banner">
                         <img
@@ -39,10 +39,12 @@ export default class Section extends Component {
                             onClick={this.handleclick}>
                         </img>
                     </div>
-                    <div className="arrowbutton">
+                    <div className="button1">
                         <button onClick={this.handleclick1}>
                             <span>{'<'}</span>
                         </button>
+                    </div>
+                    <div className="button2">
                         <button onClick={this.handleclick1}>
                             <span>></span>
                         </button>
@@ -53,18 +55,31 @@ export default class Section extends Component {
                         <span>공지사항</span><br></br>
                         <div className="border-bottom"></div>
                         <ul>
-                            {this.state.topic.map(topic => <li><a key={topic.id}>{topic.title}</a></li>)}
+                            {this.state.topic.map(topic => <li><Link to={{
+                                pathname: "/description",
+                                state: {
+                                    description: topic
+                                }
+                            }} key={topic.id}>{topic.title}</Link></li>)}
                         </ul>
                     </div>
                     <div className="board">
                         <span>자유게시판</span><br></br>
                         <div className="border-bottom"></div>
                         <ul>
-                            {this.state.board.map(board => <li><a key={board.id}>{board.title}</a></li>)}
+                            {this.state.board.map(board => <li><Link to={{
+                                pathname: "/description",
+                                state: {
+                                    description: board
+                                }
+                            }} key={board.id}>{board.title}</Link></li>)}
                         </ul>
                     </div>
                 </article>
-            </Router>
+                <footer>
+                    <span>copyright © 2019-2020 IALAB</span>
+                </footer>
+                </div>
         );
     }
 }

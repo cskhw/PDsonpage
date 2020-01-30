@@ -5,6 +5,9 @@ import Load from '../container/load';
 import Login from '../container/login';
 import Section from './section'
 import Notice from './notice'
+import Board from './board'
+import Intro from './intro'
+import Description from './description'
 
 export default class Nav extends Component {
     constructor(props) {
@@ -42,12 +45,13 @@ export default class Nav extends Component {
                     <Link to="/board">게시판</Link>
                     <Link to="/load">오시는길</Link>
                 </nav>
-                <Switch>
                     <Route exact path="/login" component={Login}></Route>
                     <Route exact path="/" component={Section}></Route>
                     <Route exact path="/notice" component={Notice}></Route>
                     <Route exact path="/load" component={Load}></Route>
-                </Switch>
+                    <Route exact path="/board" component={Board}></Route>
+                    <Route exact path="/intro" component={Intro}></Route>
+                    <Route exact path="/description" component={Description}></Route>
             </Router>
         );
     }
