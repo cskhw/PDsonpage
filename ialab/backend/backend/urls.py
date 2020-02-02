@@ -23,6 +23,9 @@ router = routers.DefaultRouter()
 router.register(r'boards', views.BoardViewSet)
 router.register(r'boards/<int:pk>', views.BoardViewSet)
 
+router.register(r'topics', views.TopicViewSet)
+router.register(r'topics/<int:pk>', views.TopicViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include(router.urls)),
