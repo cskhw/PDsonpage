@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'board', #new
     'rest_framework', #new
+    'corsheaders', #new
 ]
-
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',    #추가
     'django.middleware.common.CommonMiddleware', #추가
@@ -53,8 +54,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = ( #추가
-    'localhost:3000/'
+REST_FRAMEWORK = {
+    'DEFALUT_PERMISSION_CLASSES' : [
+        'rest_framework.permissions.AllowAny'
+    ]
+}
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000', #React 도메인
 )
 
 ROOT_URLCONF = 'backend.urls'
