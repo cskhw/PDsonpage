@@ -60,39 +60,21 @@ export default class Login extends Component {
   render() {
 
     return (
-      <form>
-        <span>세션아이디: {sessionStorage.getItem('id')}</span><br></br>
-        <span>세션비밀번호: {sessionStorage.getItem('id')}</span><br></br>
-        <span>로컬아이디: {localStorage.getItem('id')}</span><br></br>
-        <span>로컬비밀번호: {localStorage.getItem('pw')}</span><br></br>
-        <span>아이디:{this.props.userid}</span><br></br>
-        <span>비밀번호:{this.props.userpw}</span><br></br>
-        <span>세션인증상태:{sessionStorage.getItem('auth')}</span><br></br>
-        <span>로컬인증상태:{localStorage.getItem('auth')}</span><br></br>
-        <fieldset style={{
-          width:'40em',
-          height:'40em'
-      }}>
-        <input
-          placeholder="ID"
-          value={this.state.id}
-          onChange={this.handleChange}
-          name="id"
-        /><br></br>
-        <input
-          placeholder="PW"
-          value={this.state.pw}
-          onChange={this.handleChange}
-          name="pw"
-        /><br></br>
-        <a href={this.state.status} onClick={this.handleClick}>로그인</a>
-        <input type="checkbox" value={this.state.ischecked} onChange={this.ischeck}></input>자동로그인
+      <div className="container">
+      <form action="http://localhost:8000/accounts/login/" method="post">
+            <label for="username">ID</label>
+            <input type="text" placeholder="아이디 입력" name="username" required></input><br></br>
+            
+            <label for="password">PW</label>
+            <input type="text" placeholder="비밀번호 입력" name="password" required></input><br></br>
+            
+            <button type="submit">로그인</button><br></br>
+            
+            <label for="auto">자동로그인</label>
+            <input type="checkbox" checked="checked" name="auto"></input>
             <br></br>
-            </fieldset>
-        <span>아이디:{this.state.id}</span><br></br>
-        <span>비밀번호:{this.state.pw}</span><br></br>
-      
       </form>
+      </div>
     );
   }
 }

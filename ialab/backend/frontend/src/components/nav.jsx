@@ -45,13 +45,14 @@ export default class Nav extends Component {
                     <Link to="/boards">게시판</Link>
                     <Link to="/load">오시는길</Link>
                 </nav>
-                    <Route exact path="/login" component={Login}></Route>
                     <Route exact path="/" component={Section}></Route>
                     <Route exact path="/notice" component={Notice}></Route>
                     <Route exact path="/load" component={Load}></Route>
                     <Route exact path="/boards" component={Boards}></Route>
                     <Route exact path="/intro" component={Intro}></Route>
                     <Route exact path="/description" component={Description}></Route>
+                    <Route exact path="/login" component={Login}></Route>
+                    
             </Router>
         );
     }
