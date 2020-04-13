@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<div className="container">
+    <form action="http://localhost:8000/accounts/login/" method="post">
+        {{message}}
+        <br>
+        <label for="username">ID</label>
+        <input type="id" placeholder="아이디 입력" name="username" required></input><br></br>
+
+        <label for="password">PW</label>
+        <input type="password" placeholder="비밀번호 입력" name="password" required></input><br></br>
+
+        <button type="submit">로그인</button><br></br>
+        <a href="{% url 'signup' %}">회원가입</a>
+
+        <label for="keep_login">자동로그인</label>
+        <input type="checkbox" name="keep_login"></input><br></br>
+        
+        <a href="{% url 'searchid' %}">아이디 찾기</a>
+        <a href="{% url 'searchpw' %}">비밀번호 찾기</a>
+    </form>
+</div>
+
+{% endblock %}

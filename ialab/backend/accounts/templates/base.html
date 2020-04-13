@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <h3>어카운트 페이지 입니다.</h3><br>
+        <a href="http://localhost:3000/">홈으로</a><br>
+    </header>
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+</body>
+
+</html>

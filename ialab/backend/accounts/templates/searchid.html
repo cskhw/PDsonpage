@@ -1,0 +1,13 @@
+{% block content %}
+
+<div className="container">
+    <form action="http://localhost:8000/accounts/login/" method="post">
+        <label for="username">이메일 입력</label>
+        <input type="text" placeholder="이메일 입력" name="username" required></input><br></br>
+        
+        <button type="submit">찾기</button><br></br>
+        <a href="{% url 'login' %}">로그인으로</a><br></br>
+    </form>
+</div>
+
+{% endblock %}

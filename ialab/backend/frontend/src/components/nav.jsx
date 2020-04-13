@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Load from '../container/load';
-import Login from '../container/login';
 import Section from './section'
 import Notice from './notice'
 import Boards from './boards'
@@ -33,7 +32,6 @@ export default class Nav extends Component {
                     <Route exact path="/boards" component={Boards}></Route>
                     <Route exact path="/intro" component={Intro}></Route>
                     <Route exact path="/description" component={Description}></Route>
-                    <Route exact path="/login" component={Login}></Route>
                     
             </Router>
         );

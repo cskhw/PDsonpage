@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<div className="container">
+    <a href="{% url 'login' %}">로그인으로</a><br></br>
+    <form action="http://localhost:8000/accounts/login/" method="post">
+        <h3>회원 가입</h3>
+        <br>
+        <label for="username">ID</label>
+        <input type="id" placeholder="아이디 입력" name="username" required></input><br>
+
+        <label for="password">PW</label>
+        <input type="password" placeholder="비밀번호 입력" name="password" required></input><br>
+
+        <button type="submit">가입하기</input>
+
+    </form>
+</div>
+
+{% endblock %}
