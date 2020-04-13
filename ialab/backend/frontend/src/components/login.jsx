@@ -1,67 +1,27 @@
 import React, { Component} from 'react';
-import { BrowserRouter as Router, Link,Route } from 'react-router-dom'
+import CSRFToken from './csrftoken'
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: '',
-      pw: '',
-      auth: 'false',
-      ischecked: 'false',
-      status:'/login'
-    }
+  state={
+    error:''
   }
-  componentDidMount() {
-    if(this.props.userid === localStorage.getItem('id') && localStorage.getItem('pw')){
-      console.log('success')
-    }
+  async componentDidMount(){
+    try {
+      const res = await fetch('http://127.0.0.1:8000/accounts/login/');
+      const error = await res.json();
+      this.setState({
+          error:[error]
+      });
+  } catch(e){
+      console.log(e);
   }
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
   }
-  handleClick = (e) => {
-    if (this.state.id === this.props.userid && this.state.pw === this.props.userpw) {
-      alert('true')
-      this.setState({ auth: 'true' });
-      sessionStorage.setItem('id', this.state.id);
-      sessionStorage.setItem('pw', this.state.pw);
-      sessionStorage.setItem('auth', 'true');
-      console.log(this.state.ischecked)
-      if (this.state.ischecked) {
-        localStorage.setItem('id', this.state.id)
-        localStorage.setItem('pw', this.state.pw)
-        localStorage.setItem('auth', 'true')
-      }
-    }
-    else {
-      (alert(this.state.auth))
-      this.setState({ auth: 'false' });
-      sessionStorage.setItem('auth', 'false');
-
-    }
-  }
-  ischeck = (e) => {
-    this.setState({ ischecked: !this.state.ischecked })
-  }
-  keeper = (e) => {
-    if(this.state.go==='/'){
-        this.setState({go:'/login', status:'로그인'})
-        sessionStorage.removeItem('id')
-        sessionStorage.removeItem('pw')
-        sessionStorage.removeItem('auth')
-        localStorage.removeItem('id')
-        localStorage.removeItem('pw')
-        localStorage.removeItem('auth')
-    }
-}
   render() {
 
     return (
       <div className="container">
       <form action="http://localhost:8000/accounts/login/" method="post">
+            <CSRFToken />
             <label for="username">ID</label>
             <input type="text" placeholder="아이디 입력" name="username" required></input><br></br>
             
@@ -69,7 +29,7 @@ export default class Login extends Component {
             <input type="text" placeholder="비밀번호 입력" name="password" required></input><br></br>
             
             <button type="submit">로그인</button><br></br>
-            
+    <span name="error">{this.props.error}</span>
             <label for="auto">자동로그인</label>
             <input type="checkbox" checked="checked" name="auto"></input>
             <br></br>

@@ -7,3 +7,4 @@ yarn add react-redux
 yarn add redux
 yarn add node-sass
 yarn add redux-react-session
+yarn add axios

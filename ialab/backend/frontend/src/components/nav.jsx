@@ -10,24 +10,6 @@ import Intro from './intro'
 import Description from './description'
 
 export default class Nav extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            status: '로그인',
-            opacity: '1.0',
-            go: '/login'
-        }
-    }
-
-    componentDidMount() {
-        console.log(sessionStorage.getItem('auth'))
-        if (localStorage.getItem('auth') === 'true' || sessionStorage.getItem('auth') === 'true') {
-            this.setState({ status: '로그아웃', go: '/' })
-            sessionStorage.setItem('id', localStorage.getItem('id'));
-            sessionStorage.setItem('pw', localStorage.getItem('pw'));
-            sessionStorage.setItem('auth', localStorage.getItem('auth'));
-        }
-    }
 
     render() {
         return (
