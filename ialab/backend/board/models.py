@@ -9,7 +9,6 @@ class Board(models.Model):
     update = models.DateTimeField(auto_now=True)
     author = models.CharField(max_length=16)
     admin = models.CharField(max_length=16)
-
     def __str(self):
         return self.title
 
