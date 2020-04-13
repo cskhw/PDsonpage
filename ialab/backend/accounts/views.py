@@ -32,7 +32,7 @@ def login(request):
                 return response
             return redirect("http://localhost:3000/")
         else:
-            HttpResponse.set_cookie('error', "error")
+            return JsonResponse({"message":"error"}, status=400)
             return redirect("http://localhost:3000/")
         return redirect("http://localhost:3000/")
     else:
